@@ -55,10 +55,11 @@ async def monitor_keywords(keywords, domain):
     await send_telegram_message(message)
 
 def job():
-    keywords = ["kampung inggris", "kampung inggris pare"]
+    keywords = ["kampung inggris", "kampung inggris pare", "kampung inggris kediri", "kampung inggris lc"]
     asyncio.run(monitor_keywords(keywords, "kampunginggris.id"))
 
-schedule.every().day.at("08:13").do(job)
+schedule.every().day.at("09:00").do(job)
+schedule.every().day.at("16:00").do(job)
 
 while True:
     schedule.run_pending()
