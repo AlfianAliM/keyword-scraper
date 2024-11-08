@@ -2,8 +2,11 @@ import requests
 from telegram import Bot
 import asyncio
 from datetime import datetime
+import os
+from dotenv import load_dotenv
 
-# API keys
+load_dotenv()
+
 SERP_API_KEY = os.getenv('SERP_API_KEY')
 TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 CHAT_ID = os.getenv('CHAT_ID')
@@ -49,6 +52,6 @@ async def monitor_keywords(keywords, domain):
     
     await send_telegram_message(message)
 
-keywords = ["kampung inggris", "kampung inggris pare"]
+keywords = ["kampung inggris", "kampung inggris pare", "kampung inggris kediri", "kampung inggris lc"]
 
 asyncio.run(monitor_keywords(keywords, "kampunginggris.id"))
