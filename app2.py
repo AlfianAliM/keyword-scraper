@@ -57,13 +57,16 @@ async def monitor_keywords(keywords, domain):
 def job():
     domains_and_keywords = [
         ("kampunginggris.id", ["kampung inggris", "kampung inggris pare", "kampung inggris kediri", "kampung inggris lc"]),
-        ("impacta.id", ["konsultan digital marketing", "konsultan marketing"])
+        ("impacta.id", ["konsultan digital marketing", "konsultan marketing"]),
+        ("nationaleyecenter.id", ["lasik", "operasi lasik", "lasik mata", "miopi", "mata minus", "silinder", "mata plus", "ortho k", "presbiopi", "katarak", "mata panda", "dokter mata", "lasik mata surabaya", "biaya lasik mata", "national eye center"]),
+        ("jagonyakemasan.id", ["standing pouch"])
     ]
     
     for domain, keywords in domains_and_keywords:
         asyncio.run(monitor_keywords(keywords, domain))
 
-schedule.every().day.at("08:13").do(job)
+schedule.every().day.at("07:00").do(job)
+schedule.every().day.at("16:00").do(job)
 
 while True:
     schedule.run_pending()
