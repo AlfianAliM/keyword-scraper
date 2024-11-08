@@ -4,9 +4,9 @@ import asyncio
 from datetime import datetime
 
 # API keys
-SERP_API_KEY = '6f15770e0e66ebbc7a987e71b46144723e4e3682a8dfbebccb27fa4152d24ac9'
-TELEGRAM_BOT_TOKEN = '7814124948:AAHcA5o-0Fzo6L9G55Btadne48KyqIcjkOc'
-CHAT_ID = '-4591228561'
+SERP_API_KEY = os.getenv('SERP_API_KEY')
+TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+CHAT_ID = os.getenv('CHAT_ID')
 
 async def check_ranking(keyword, domain):
     page = 0  
