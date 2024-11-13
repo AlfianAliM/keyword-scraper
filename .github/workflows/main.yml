@@ -2,7 +2,7 @@ name: Check Keyword Ranking
 
 on:
   schedule:
-    - cron: '23 5 * * *' 
+    - cron: '27 5 * * *' 
 
 jobs:
   keyword_ranking:
