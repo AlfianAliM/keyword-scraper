@@ -1,6 +1,7 @@
 import requests
 from telegram import Bot
 import asyncio
+import os
 
 # API keys
 SERP_API_KEY = os.getenv('SERP_API_KEY')

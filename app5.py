@@ -1,5 +1,3 @@
-import schedule
-import time
 import asyncio
 from datetime import datetime
 import requests
@@ -54,7 +52,7 @@ async def monitor_keywords(keywords, domain):
     
     await send_telegram_message(message)
 
-def job():
+async def main():
     domains_and_keywords = [
         ("kampunginggris.id", ["kampung inggris", "kampung inggris pare"]),
         ("impacta.id", ["konsultan digital marketing", "konsultan marketing"]),
@@ -62,12 +60,12 @@ def job():
         ("jagonyakemasan.id", ["standing pouch"])
     ]
     
-    for domain, keywords in domains_and_keywords:
-        asyncio.run(monitor_keywords(keywords, domain))
+    while True:
+        for domain, keywords in domains_and_keywords:
+            await monitor_keywords(keywords, domain)
+        
+        # Set to 24 hours interval (in seconds)
+        await asyncio.sleep(24 * 60 * 60) 
 
-schedule.every().day.at("07:50").do(job)
-schedule.every().day.at("11:52").do(job)
-
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+# Run the script
+asyncio.run(main())
