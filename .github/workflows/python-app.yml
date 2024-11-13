@@ -2,7 +2,7 @@ name: Check Keyword Ranking
 
 on:
   schedule:
-    - cron: '50 5 * * *'  # Menjalankan setiap hari pada jam 05:23 UTC (setara dengan 12:23 WIB)
+    - cron: '35 6 * * *'  # Menjalankan setiap hari pada jam 06:35 UTC (setara dengan 13:35 WIB)
 
 jobs:
   keyword_ranking:
@@ -27,4 +27,4 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
         run: |
-          python app5.py
+          python app2.py
