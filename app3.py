@@ -1,6 +1,6 @@
 import requests
 
-SERP_API_KEY = "ff175974830ca013364ed87422d8fb9f5ff5f3e0800f7f234c78f36ea83ade6b"
+SERP_API_KEY = os.getenv('SERP_API_KEY')
 keyword = "kampung inggris"
 domain = "kampunginggris.id"
 page = 0
