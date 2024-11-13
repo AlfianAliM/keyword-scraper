@@ -2,7 +2,7 @@ name: Check Keyword Ranking
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Menjalankan setiap hari pada jam 00:00 UTC
+    - cron: '23 5 * * *' 
 
 jobs:
   keyword_ranking:
